@@ -1,0 +1,173 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Fundo */
+  body {
+    background: #f8f9fb;
+    color: #333;
+  }
+  
+  /* Topo */
+  .top-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    background: white;
+  }
+  
+  .logo-icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+  }
+  
+  .logo {
+    font-size: 26px;
+    color: #ff4f5a;
+  }
+  
+  .user {
+    font-size: 28px;
+    color: #333;
+  }
+  
+  /* Barra de busca */
+  .search-box {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .search-box input {
+    width: 100%;
+    padding: 10px 40px 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    outline: none;
+    font-size: 14px;
+  }
+  
+  .search-box i {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+  }
+  
+  /* Container principal */
+  .container {
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+  
+  /* Marca */
+  .brand {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  /* Banner */
+  .banner {
+    width: 100%;
+    border-radius: 16px;
+    margin-bottom: 20px;
+    object-fit: cover;
+    max-height: 280px;
+  }
+  
+  /* Card de destaque */
+  .highlight-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #e5f8ff;
+    padding: 15px;
+    border-radius: 16px;
+    text-decoration: none;
+    color: #0077b6;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .highlight-card img {
+    width: 80px;
+    border-radius: 12px;
+  }
+  
+  /* Seções */
+  .section {
+    margin-bottom: 35px;
+  }
+  
+  .section h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  
+  /* Grid de imagens responsivo */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+  }
+  
+  .grid img {
+    width: 100%;
+    height: auto;              /* deixa a altura proporcional */
+    border-radius: 14px;
+    object-fit: cover;
+    transition: transform 0.3s;
+    cursor: pointer;
+  }
+  
+  
+  .grid img:hover {
+    transform: scale(1.07);
+  }
+  
+  /* 🔹 Responsividade */
+  @media (max-width: 768px) {
+    .brand {
+      font-size: 22px;
+      text-align: center;
+    }
+  
+    .highlight-card {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .highlight-card img {
+      width: 60px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .top-bar {
+      gap: 15px;
+    }
+  
+    .search-box input {
+      font-size: 12px;
+      padding: 8px 35px 8px 12px;
+    }
+  
+    .grid {
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+  }
+  
