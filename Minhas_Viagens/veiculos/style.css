@@ -1,0 +1,248 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #fff;
+    color: #333;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background: #ffffff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Logo */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #16b82e;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+/* Menu */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 18px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: -6px;
+    background: #16b82e;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #16b82e;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Botões */
+.buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+/* Cadastrar-se */
+.btn-signup {
+    background: transparent;
+    color: #16b82e;
+    border: 2px solid #16b82e;
+}
+
+.btn-signup:hover {
+    background: #16b82e;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Login */
+.btn-login {
+    background: #16b82e;
+    color: #fff;
+    border: 2px solid #16b82e;
+    box-shadow: 0 3px 8px rgba(22, 184, 46, 0.3);
+}
+
+.btn-login:hover {
+    background: #13a029;
+    transform: translateY(-2px);
+}
+
+
+/* Animação texto Chat */
+.chat {
+    font-size: 20px;
+    font-weight: bold;
+    color: transparent;
+    background: linear-gradient(90deg, #999, #2bff00, #999);
+    background-size: 200% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: wave 2s linear infinite;
+    cursor: pointer;
+}
+
+.chat:hover {
+    animation: none;
+    background: #2bff00;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+@keyframes wave {
+    from {
+        background-position: -200% 0;
+    }
+
+    to {
+        background-position: 200% 0;
+    }
+}
+
+/* Main */
+.central-main {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.central {
+    display: flex;
+    align-items: center;
+    padding: 60px;
+    gap: 200px;
+}
+
+img{
+    height: 70vh;
+}
+
+.central-text {
+    max-width: 500px;
+}
+
+.central-text h1 {
+    font-size: 48px;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.central-text p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.btn-reservar {
+    display: inline-block;
+    padding: 12px 24px;
+    border: 2px solid #16b82e;
+    border-radius: 30px;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-reservar:hover {
+    background: #16b82e;
+    color: #fff;
+}
+
+/* Local da Pagina  */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* Setas dentro das bolinhas */
+.arrow {
+  width: 36px;
+  height: 36px;
+  background: #a6e7b4; 
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #636363;
+  font-size: 18px;
+  line-height: 1; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.arrow:hover {
+  background: #16b82e;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+/* Bolinhas */
+.dots {
+  display: flex;
+  gap: 12px;
+}
+
+.dot {
+  width: 14px;
+  height: 14px;
+  background: #a7a7a7;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.dot:hover {
+  transform: scale(1.2);
+  background: #16b82e;
+}
+
+/* Ativo */
+.dot.active {
+  background: #16b82e;
+}
