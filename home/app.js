@@ -8,23 +8,23 @@ let thumbnailItems = thumbnail.querySelectorAll('.item')
 
 thumbnail.appendChild(thumbnailItems[0])
 
-// Function for next button 
-nextBtn.onclick = function() {
-    moveSlider('next')
+// Eventos de clique
+if (nextBtn) {
+    nextBtn.onclick = function () {
+        moveSlider('next')
+    }
 }
-
-
-// Function for prev button 
-prevBtn.onclick = function() {
-    moveSlider('prev')
+if (prevBtn) {
+    prevBtn.onclick = function () {
+        moveSlider('prev')
+    }
 }
-
 
 function moveSlider(direction) {
     let sliderItems = sliderList.querySelectorAll('.item')
     let thumbnailItems = document.querySelectorAll('.thumbnail .item')
-    
-    if(direction === 'next'){
+
+    if (direction === 'next') {
         sliderList.appendChild(sliderItems[0])
         thumbnail.appendChild(thumbnailItems[0])
         slider.classList.add('next')
@@ -34,12 +34,22 @@ function moveSlider(direction) {
         slider.classList.add('prev')
     }
 
+    // remove a classe quando a animação terminar
+    slider.addEventListener('animationend', function () {
+        slider.classList.remove('next')
+        slider.classList.remove('prev')
+    }, { once: true })
+}
 
-    slider.addEventListener('animationend', function() {
-        if(direction === 'next'){
-            slider.classList.remove('next')
-        } else {
-            slider.classList.remove('prev')
-        }
-    }, {once: true}) // Remove the event listener after it's triggered once
-}   
+// ------------------- AUTO SLIDE -------------------
+let autoSlide = setInterval(() => moveSlider('next'), 3000)
+
+// Pausar quando o mouse entra no slider
+slider.addEventListener('mouseenter', () => {
+    clearInterval(autoSlide)
+})
+
+// Retomar quando o mouse sai do slider
+slider.addEventListener('mouseleave', () => {
+    autoSlide = setInterval(() => moveSlider('next'), 3000)
+})
