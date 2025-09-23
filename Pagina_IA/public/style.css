@@ -1,0 +1,387 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f9;
+  margin: 0;
+  padding: 0;
+}
+
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.chat-container {
+  height: 100%;
+  margin: 30px auto;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+#chat-box {
+  height: 80vh;
+  overflow-y: auto;
+  padding: 25px;
+  position: relative;
+  border-radius: 20px;
+  background: rgba(15, 15, 30, 0.85);
+  backdrop-filter: blur(14px) saturate(140%);
+  border: 2px solid rgba(0, 209, 255, 0.6);
+  box-shadow: 0 0 30px rgba(0, 209, 255, 0.4);
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: all 0.5s ease;
+
+  display: flex;
+  flex-direction: column;
+  /* empilha User-msg e bot-wrapper */
+  gap: 15px;
+  /* espaço entre cada interação */
+}
+
+/* Wrapper para mensagens do bot */
+.bot-msg-wrapper {
+  width: 100%;
+  position: absolute;
+  /* permite centralização vertical/horizontal */
+  top: 50%;
+  /* posição vertical 50% do chat-box */
+  left: 50%;
+  /* posição horizontal 50% do chat-box */
+  transform: translate(-50%, -50%);
+  /* centraliza exatamente no meio */
+  display: flex;
+  /* bot-msgs lado a lado */
+  gap: 10px;
+  flex-wrap: wrap;
+  /* quebra linha se necessário */
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* Mensagens do usuário */
+.user-msg {
+  background: rgba(0, 120, 255, 0.4);
+  border: 1px solid rgba(0, 200, 255, 0.8);
+  box-shadow: 0 0 12px rgba(0, 200, 255, 0.5);
+  padding: 14px 20px;
+  border-radius: 18px;
+  margin-bottom: 0;
+  /* removido, o gap do chat-box já cria espaço */
+  max-width: 75%;
+  color: #ffffff;
+  font-weight: 500;
+  align-self: flex-start;
+  /* sempre à esquerda */
+}
+
+/* Mensagens do bot */
+.bot-msg {
+  background: rgba(10, 30, 60, 0.75);
+  border: 1px solid rgba(0, 209, 255, 0.6);
+  box-shadow: 0 0 15px rgba(0, 209, 255, 0.4);
+  padding: 14px;
+  border-radius: 18px;
+  color: #ffffff;
+  font-weight: 500;
+  width: 200px;
+  /* largura fixa */
+  height: 200px;
+  /* altura fixa */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 6px;
+  text-align: left;
+}
+
+.bot-msg-header {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+}
+
+.bot-msg-title {
+  margin-right: 5px;
+}
+
+.bot-msg-separator {
+  margin: 0 5px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.bot-msg-category {
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.bot-msg-desc {
+  font-weight: 400;
+  font-size: 14px;
+  color: #f0f0f0;
+}
+
+
+#chat-box::-webkit-scrollbar {
+  width: 10px;
+}
+
+#chat-box::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+#chat-box::-webkit-scrollbar-thumb {
+  background: rgba(30, 58, 138, 0.7);
+  border-radius: 10px;
+}
+
+#chat-box::-webkit-scrollbar-thumb:hover {
+  background: rgba(30, 58, 138, 0.9);
+}
+
+/* Mantém o estilo do input fixo no fundo */
+.oval-input-wrapper {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50vw;
+}
+
+.oval-input-wrapper input {
+  width: 100%;
+  height: 50px;
+  padding: 0 25px;
+  border-radius: 50px;
+  background: rgba(10, 20, 40, 0.65);
+  border: 1px solid rgba(0, 209, 255, 0.7);
+  box-shadow: 0 0 18px rgba(0, 209, 255, 0.4);
+  font-size: 16px;
+  outline: none;
+  backdrop-filter: blur(12px);
+  text-align: left;
+}
+
+.oval-input-wrapper input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.oval-input-wrapper input:focus {
+  border-color: #3B82F6;
+  /* neon azul ao focar */
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+  background: rgba(30, 58, 138, 0.3);
+}
+
+
+/* ========== Estilo dos inputs ========== */
+.inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.inputs input {
+  display: none;
+  padding: 12px 18px;
+  margin: 10px 0;
+  width: 100%;
+  max-width: 400px;
+  font-size: 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+   text-shadow: 
+    1px 1px 1px rgba(0, 0, 0, 0.7);
+}
+
+.inputs input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.inputs input:focus {
+  border-color: #3B82F6;
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+  outline: none;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.inputs button {
+  display: none;
+  padding: 14px 30px;
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #1E3A8A, #3B82F6);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.inputs button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(135deg, #3B82F6, #1E3A8A);
+}
+
+/* ========== Cards de redirecionamento ========== */
+.cards-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+  background: rgba(10, 20, 40, 0.8);
+  border: 2px solid rgba(0, 209, 255, 0.7);
+  box-shadow: 0 8px 25px rgba(0, 0, 60, 0.6);
+  border-radius: 15px;
+  max-width: 950px;
+  margin: 50px auto;
+}
+
+.cards-container {
+  display: flex;
+  gap: 25px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.card {
+  flex: 1;
+  padding: 25px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #e0f7ff;
+  text-align: center;
+  border-radius: 12px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  border: 1px solid rgba(0, 209, 255, 0.4);
+}
+
+.card.active {
+  background: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.card h3 {
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.card p {
+  font-size: 16px;
+  color: #ccefff;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 209, 255, 0.4);
+  background: rgba(0, 209, 255, 0.1);
+}
+
+
+/* ========== Estilo do texto ========== */
+.hero-section {
+  text-align: center;
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 50px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.headline {
+  font-size: 28px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  color: #e0f7ff;
+  text-shadow: 
+    1px 1px 1px rgba(0, 0, 0, 0.7);
+}
+
+.subheadline {
+  font-size: 22px;
+  line-height: 1.5;
+  margin-bottom: 30px;
+  color: #ffffff;
+  text-shadow: 
+    1px 1px 1px rgba(0, 0, 0, 0.7);
+}
+
+.instruction {
+  font-size: 20px;
+  margin-top: 40px;
+  color: #e0f7ff;
+  text-shadow: 
+    1px 1px 1px rgba(0, 0, 0, 0.7);
+}
+
+.highlight {
+  color: rgb(71, 104, 166);
+  font-weight: bold;
+}
+
+.cta-button {
+ background: linear-gradient(135deg, #1E3A8A, #3B82F6);
+  color: #ffffff;
+  border: none;
+  padding: 15px 30px;
+  font-size: 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0, 209, 255, 0.4);
+}
+
+/* Setas */
+.arrows {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+
+.arrow i.chevron {
+  font-size: 40px;
+  line-height: 0;
+  display: block;
+  margin-top: 14px;
+}
+
+.arrow-light i {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.arrow-medium i {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.arrow-strong i {
+  color: #ffffff;
+}
