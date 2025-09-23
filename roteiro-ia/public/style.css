@@ -29,30 +29,37 @@ body {
   padding: 25px;
   position: relative;
   border-radius: 20px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(15px) saturate(150%);
-  -webkit-backdrop-filter: blur(15px) saturate(150%);
-  border: 2px solid #1E3A8A;
-  box-shadow: 0 25px 50px rgba(0, 0, 50, 0.5);
+  background: rgba(15, 15, 30, 0.85);
+  backdrop-filter: blur(14px) saturate(140%);
+  border: 2px solid rgba(0, 209, 255, 0.6);
+  box-shadow: 0 0 30px rgba(0, 209, 255, 0.4);
   color: #ffffff;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   transition: all 0.5s ease;
 
   display: flex;
-  flex-direction: column; /* empilha User-msg e bot-wrapper */
-  gap: 15px; /* espaço entre cada interação */
+  flex-direction: column;
+  /* empilha User-msg e bot-wrapper */
+  gap: 15px;
+  /* espaço entre cada interação */
 }
 
 /* Wrapper para mensagens do bot */
 .bot-msg-wrapper {
   width: 100%;
-  position: absolute;       /* permite centralização vertical/horizontal */
-  top: 50%;                 /* posição vertical 50% do chat-box */
-  left: 50%;                /* posição horizontal 50% do chat-box */
-  transform: translate(-50%, -50%); /* centraliza exatamente no meio */
-  display: flex;            /* bot-msgs lado a lado */
+  position: absolute;
+  /* permite centralização vertical/horizontal */
+  top: 50%;
+  /* posição vertical 50% do chat-box */
+  left: 50%;
+  /* posição horizontal 50% do chat-box */
+  transform: translate(-50%, -50%);
+  /* centraliza exatamente no meio */
+  display: flex;
+  /* bot-msgs lado a lado */
   gap: 10px;
-  flex-wrap: wrap;          /* quebra linha se necessário */
+  flex-wrap: wrap;
+  /* quebra linha se necessário */
   align-items: center;
   justify-content: center;
 }
@@ -60,25 +67,33 @@ body {
 
 /* Mensagens do usuário */
 .user-msg {
-  background: rgba(59, 130, 246, 0.3);
+  background: rgba(0, 120, 255, 0.4);
+  border: 1px solid rgba(0, 200, 255, 0.8);
+  box-shadow: 0 0 12px rgba(0, 200, 255, 0.5);
   padding: 14px 20px;
   border-radius: 18px;
-  margin-bottom: 0; /* removido, o gap do chat-box já cria espaço */
+  margin-bottom: 0;
+  /* removido, o gap do chat-box já cria espaço */
   max-width: 75%;
   color: #ffffff;
   font-weight: 500;
-  align-self: flex-start; /* sempre à esquerda */
+  align-self: flex-start;
+  /* sempre à esquerda */
 }
 
 /* Mensagens do bot */
 .bot-msg {
-  background: rgba(30, 58, 138, 0.45);
+  background: rgba(10, 30, 60, 0.75);
+  border: 1px solid rgba(0, 209, 255, 0.6);
+  box-shadow: 0 0 15px rgba(0, 209, 255, 0.4);
   padding: 14px;
   border-radius: 18px;
   color: #ffffff;
   font-weight: 500;
-  width: 200px;   /* largura fixa */
-  height: 200px;  /* altura fixa */
+  width: 200px;
+  /* largura fixa */
+  height: 200px;
+  /* altura fixa */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -98,12 +113,12 @@ body {
 
 .bot-msg-separator {
   margin: 0 5px;
-  color: rgba(255,255,255,0.7);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .bot-msg-category {
   font-weight: 500;
-  color: rgba(255,255,255,0.85);
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .bot-msg-desc {
@@ -133,26 +148,25 @@ body {
 
 /* Mantém o estilo do input fixo no fundo */
 .oval-input-wrapper {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 50vw;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50vw;
 }
 
 .oval-input-wrapper input {
-    width: 100%;
-    height: 50px;
-    padding: 0 25px;
-    border-radius: 50px;
-    border: 1px solid rgba(30, 58, 138, 0.8);
-    background: rgba(30, 58, 138, 0.2);
-    color: #ffffff;
-    font-size: 16px;
-    outline: none;
-    backdrop-filter: blur(12px);
-    box-shadow: 0 6px 15px rgba(0, 0, 50, 0.25);
-    text-align: left;
+  width: 100%;
+  height: 50px;
+  padding: 0 25px;
+  border-radius: 50px;
+  background: rgba(10, 20, 40, 0.65);
+  border: 1px solid rgba(0, 209, 255, 0.7);
+  box-shadow: 0 0 18px rgba(0, 209, 255, 0.4);
+  font-size: 16px;
+  outline: none;
+  backdrop-filter: blur(12px);
+  text-align: left;
 }
 
 .oval-input-wrapper input::placeholder {
@@ -190,6 +204,8 @@ body {
   backdrop-filter: blur(10px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   transition: all 0.3s ease;
+   text-shadow: 
+    1px 1px 1px rgba(0, 0, 0, 0.7);
 }
 
 .inputs input::placeholder {
@@ -229,12 +245,12 @@ body {
   display: flex;
   justify-content: center;
   padding: 30px;
-  background: rgba(0, 29, 60, 0.6);
-  border: 2px solid #00d1ff;
+  background: rgba(10, 20, 40, 0.8);
+  border: 2px solid rgba(0, 209, 255, 0.7);
+  box-shadow: 0 8px 25px rgba(0, 0, 60, 0.6);
   border-radius: 15px;
   max-width: 950px;
   margin: 50px auto;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .cards-container {
@@ -300,6 +316,8 @@ body {
   line-height: 1.6;
   margin-bottom: 30px;
   color: #e0f7ff;
+  text-shadow: 
+    1px 1px 1px rgba(0, 0, 0, 0.7);
 }
 
 .subheadline {
@@ -307,22 +325,26 @@ body {
   line-height: 1.5;
   margin-bottom: 30px;
   color: #ffffff;
+  text-shadow: 
+    1px 1px 1px rgba(0, 0, 0, 0.7);
 }
 
 .instruction {
   font-size: 20px;
   margin-top: 40px;
   color: #e0f7ff;
+  text-shadow: 
+    1px 1px 1px rgba(0, 0, 0, 0.7);
 }
 
 .highlight {
-  color: #00d1ff;
+  color: rgb(71, 104, 166);
   font-weight: bold;
 }
 
 .cta-button {
-  background: linear-gradient(90deg, #00d1ff, #80e0ff);
-  color: #0a1f3d;
+ background: linear-gradient(135deg, #1E3A8A, #3B82F6);
+  color: #ffffff;
   border: none;
   padding: 15px 30px;
   font-size: 18px;
