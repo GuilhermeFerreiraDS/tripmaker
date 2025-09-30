@@ -7,7 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TripMaker - Roteiro Inteligente</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
 </head>
 
 <body>
@@ -17,7 +16,7 @@
     Seu navegador não suporta vídeo.
   </video>
 
-  <!---------------------------------- Texto Descritivo ---------------------------------->
+  <!-- Texto Descritivo  -->
   <div class="hero-section">
     <h1 class="title">Tr<span class="highlight">IA</span>p Maker ✈️</h1>
 
@@ -34,8 +33,8 @@
     <button class="cta-button">Descrevendo com suas palavras</button>
 
     <h3 class="instruction">
-      Selecione um dos <span class="highlight">Cards</span> abaixo e monte seu Roteiro mais <span class="highlight">
-        rápido</span>
+      Selecione um dos <span class="highlight">Cards</span> Abaixo e monte seu Roteiro mais <span class="highlight">
+        Rapido </span>
     </h3>
   </div>
 
@@ -45,7 +44,7 @@
     <span class="arrow arrow-strong"><i class="fas fa-chevron-down chevron"></i></span>
   </div>
 
-  <!---------------------------------- Cards das Opções para Pesquisar ---------------------------------->
+  <!-- Cards das Opções -->
   <div class="cards-wrapper">
     <div class="cards-container">
       <div class="card">
@@ -68,32 +67,30 @@
         </div>
         <p class="card-text">Defina seu orçamento para receber sugestões adequadas ao seu perfil salarial.</p>
       </div>
+
     </div>
   </div>
 
-  <!-- inputs do Chat de Pesquisa -->
+  <!-- inputs do Chat -->
   <div class="inputs">
     <input type="text" id="cidade" placeholder="Digite a Cidade">
     <input type="text" id="categoria" placeholder="Digite a Categoria">
+    <!-- arrumar no chat -->
     <input type="text" id="valor" placeholder="Digite o valor da Viagem">
     <button onclick="enviarMensagem()">Buscar</button>
   </div>
 
-  <!---------------------------------- Espaço de texto do Chat  ---------------------------------->
+  <!-- Espaço de texto do Chat  -->
   <div class="chat-container">
     <div id="chat-box">
-      <div id="top-msgs-wrapper">
-        <div id="user-msg-wrapper"></div> 
-        <div id="box-valor-wrapper"></div> 
-      </div>
-
-      <div id="bot-msg-wrapper"></div> 
-
       <div class="oval-input-wrapper" id="oval-input-wrapper" style="display: none;">
         <input type="text" placeholder="Descreva sua viagem ideal">
       </div>
     </div>
   </div>
+
+
+
 
   <script src="script.js"></script>
 </body>
