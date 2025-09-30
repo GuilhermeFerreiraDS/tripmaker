@@ -6,7 +6,7 @@
 }
 
 body {
-    background: #00584e;
+    background: #1e3a8a; /* novo azul escuro */
     overflow: hidden;
 }
 
@@ -21,17 +21,24 @@ body {
 
 /* Container da imagem */
 .container-img {
-    flex: 1;
+    flex: 1; /* ocupa 50% do container principal */
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden; /* previne scrolls indesejados */
+}
+
+.container-img img {
+    max-width: 100%;    /* não ultrapassa a largura da div */
+    max-height: 100%;   /* não ultrapassa a altura da div */
+    object-fit: contain; /* mantém a imagem inteira */
 }
 
 /* ---------- Container da segunda coluna com fundo e arredondamento ---------- */
 
 .container-anuncio {
     flex: 1;
-    background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+    background: linear-gradient(135deg, #bfdbfe, #93c5fd); /* novos tons de azul claro */
     border-top-left-radius: 100px;
     border-bottom-left-radius: 100px;
     min-height: 100vh;
@@ -41,7 +48,7 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding: 40px 20px;
+    padding: 70px 20px;
 }
 
 /* Texto de abertura */
@@ -53,7 +60,7 @@ body {
     font-size: 2.2rem;
     font-weight: 700;
     margin-bottom: 30px;
-    color: #00796b;
+    color: #2563eb; /* azul médio */
 }
 
 /* Container que envolve os cards */
@@ -61,12 +68,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    margin-top: 5%;
     width: 100%;
 }
 
 /* Container que organiza os cards em linha e permite quebra */
 .cards-explicativo {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
@@ -77,77 +86,26 @@ body {
 /* Cada card individual */
 .card {
     background: white;
-    padding: 20px;
+    padding: 30px;
     margin: 15px;
     border-radius: 20px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+
+    justify-content: start;
     align-items: center;
-    width: 160px;
-    height: 160px;
+    width: 500px;
+    height: 500px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
     cursor: pointer;
-}
-
-.card i {
-    font-size: 45px;
-    color: #00796b;
-    margin-bottom: 12px;
-    transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.card p {
-    font-size: 15px;
-    font-weight: 500;
-    margin: 0;
-    color: #004d40;
 }
 
 /* Efeitos ao passar o mouse */
 .card:hover {
     transform: translateY(-10px) scale(1.1);
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
-    background: #e0f2f1;
 }
-
-.card:hover i {
-    color: #004d40;
-    transform: scale(1.2) rotate(5deg);
-}
-
-/* Responsividade */
-@media (max-width: 900px) {
-    .card {
-        width: 140px;
-        height: 140px;
-    }
-    .card i {
-        font-size: 38px;
-    }
-    .card p {
-        font-size: 14px;
-    }
-}
-
-@media (max-width: 600px) {
-    .cards-explicativo {
-        justify-content: center;
-    }
-    .card {
-        width: 130px;
-        height: 130px;
-    }
-    .card i {
-        font-size: 35px;
-    }
-    .card p {
-        font-size: 13px;
-    }
-}
-
 
 /* Importa o Font Awesome */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <title></title>
+</head>
+
+<body>
+    <main>
+        <!-- Container Geral -->
+        <div class="container">
+
+            <!-- Container Imagem -->
+            <div class="container-img">
+                <img src="img/img.svg" alt="">
+            </div>
+
+            <!-- Container com Escolhas -->
+            <div class="container-anuncio">
+
+                <!-- texto abertura -->
+                <div class="texto-abertura">
+                    <h1>Selecione o local do seu imovel no mapa abaixo!</h1>
+                </div>
+
+                <!-- Cards para Escolher -->
+                <div class="cards-container">
+                    <div class="cards-explicativo">
+                        <div class="card">
+                            <input id="address" type="text" placeholder="Digite rua, bairro ou CEP">
+                            <div id="suggestions" style="border:1px solid #ccc; max-width:300px;"></div>
+
+                            <label>Rua: <span id="road"></span></label>
+                            <label>Bairro: <span id="suburb"></span></label>
+                            <label>Cidade: <span id="city"></span></label>
+                            <label>Estado: <span id="state"></span></label>
+                            <label>CEP: <span id="postcode"></span></label>
+
+                            <div id="map"></div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+</body>
+
+</html>
