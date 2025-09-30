@@ -34,21 +34,21 @@ async function enviarMensagem() {
     const cidade = document.getElementById("cidade").value.trim();
     const categoria = document.getElementById("categoria").value.trim();
     const valor = document.getElementById("valor").value.trim();
-    const chatBox = document.getElementById("chat-box");
+
+    const userWrapper = document.getElementById("user-msg-wrapper");
+    const botWrapper = document.getElementById("bot-msg-wrapper");
+    const valorWrapper = document.getElementById("box-valor-wrapper");
 
     if (!cidade && !categoria && !valor) {
         alert("Por favor, digite pelo menos um critério de busca!");
         return;
     }
 
-    const userMsg = document.createElement("div");
-    userMsg.classList.add("user-msg");
-    let msgText = [];
-    if (cidade) msgText.push(`Cidade: ${cidade}`);
-    if (categoria) msgText.push(`Categoria: ${categoria}`);
-    if (valor) msgText.push(`Valor máximo: R$ ${valor}`);
-    userMsg.innerHTML = "📍 " + msgText.join(" | ");
-    chatBox.appendChild(userMsg);
+    // Mostra a cidade digitada no user-msg-wrapper
+    userWrapper.textContent = cidade ? `📍 Cidade: ${cidade}` : "📍 Cidade não informada";
+
+    botWrapper.innerHTML = "";
+    valorWrapper.textContent = "";
 
     try {
         const resposta = await fetch("http://localhost:3000/roteiro", {
@@ -60,11 +60,7 @@ async function enviarMensagem() {
         const dados = await resposta.json();
 
         if (dados.pontos && dados.pontos.length > 0) {
-            const botWrapper = document.createElement("div");
-            botWrapper.classList.add("bot-msg-wrapper");
-
             dados.pontos.forEach(ponto => {
-                const valorDisplay = ponto.valor ?? "sem custo";
                 const botMsg = document.createElement("div");
                 botMsg.classList.add("bot-msg");
                 botMsg.innerHTML = `
@@ -72,40 +68,42 @@ async function enviarMensagem() {
                         <span class="bot-msg-title">${ponto.nome}</span>
                         <span class="bot-msg-separator"> | </span>
                         <span class="bot-msg-category">${ponto.categoria}</span>
-                        <span class="bot-msg-separator"> | </span>
-                        <span class="bot-msg-valor">${valorDisplay}</span>
                     </div>
-                    <div class="bot-msg-desc">
-                        ${ponto.descricao}
-                    </div>
+                    <div class="bot-msg-desc">${ponto.descricao}</div>
+                    <div class="bot-msg-valor">💰 Valor estimado: ${ponto.valor}</div>
                 `;
                 botWrapper.appendChild(botMsg);
             });
 
-            // Total do roteiro
-            if (dados.total !== undefined) {
-                const resumo = document.createElement("div");
-                resumo.classList.add("bot-msg");
-                resumo.innerHTML = `💰 Custo total estimado do roteiro: R$ ${dados.total.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}`;
-                chatBox.appendChild(resumo);
-            }
+            // Soma todos os valores do bot-msg-valor corretamente
+            const todosValores = botWrapper.querySelectorAll(".bot-msg-valor");
+            let somaTotal = 0;
 
-            chatBox.appendChild(botWrapper);
+            todosValores.forEach(el => {
+                let valorTexto = el.textContent.replace("💰 Valor estimado:", "").trim();
+                if (valorTexto.toLowerCase() === "sem custo") return; // ignora sem custo
+                valorTexto = valorTexto.replace(/[^\d,]/g, "").replace(",", "."); // remove símbolos e ajusta vírgula
+                const valorNum = parseFloat(valorTexto);
+                if (!isNaN(valorNum)) somaTotal += valorNum;
+            });
+
+            valorWrapper.textContent = `💰 Total estimado: R$ ${somaTotal.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}`;
+
         } else {
-            const botMsg = document.createElement("div");
-            botMsg.classList.add("bot-msg");
-            botMsg.innerHTML = "⚠️ Nenhum ponto encontrado.";
-            chatBox.appendChild(botMsg);
+            botWrapper.textContent = "⚠️ Nenhum ponto encontrado.";
+            valorWrapper.textContent = `💰 Total estimado: R$ 0,00`;
         }
 
     } catch (err) {
-        const botMsg = document.createElement("div");
-        botMsg.classList.add("bot-msg");
-        botMsg.innerHTML = `❌ Erro: ${err.message}`;
-        chatBox.appendChild(botMsg);
+        botWrapper.textContent = `❌ Erro: ${err.message}`;
+        valorWrapper.textContent = "";
     }
 
+    // Scroll automático
+    const chatBox = document.getElementById("chat-box");
     chatBox.scrollTop = chatBox.scrollHeight;
+
+    // Limpa inputs
     document.getElementById("cidade").value = "";
     document.getElementById("categoria").value = "";
     document.getElementById("valor").value = "";
