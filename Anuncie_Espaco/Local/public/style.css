@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: #1e3a8a;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+/* Container da imagem */
+.container-img {
+    flex: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; 
+}
+
+.container-img img {
+    max-width: 100%;    
+    max-height: 100%;   
+    object-fit: contain; 
+}
+
+
+.container-anuncio {
+    flex: 1;
+    background: linear-gradient(135deg, #bfdbfe, #93c5fd);
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+    padding: 70px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.texto-abertura h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #2563eb;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.cards-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.cards-explicativo {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card input {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: calc(100% - 40px);
+    padding: 10px;
+    z-index: 1000;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background: white;
+}
+
+.card {
+    position: relative; 
+    width: 500px;
+    height: 500px;
+    border-radius: 20px;
+    overflow: hidden; 
+    margin-top: 5%;
+}
+
+#map {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+#address {
+    position: absolute;
+    top: 10px;      
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;   
+    width: 80%;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background: rgba(255, 255, 255, 0.9);
+}
+
