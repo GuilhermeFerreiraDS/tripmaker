@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
+
+    <title></title>
+</head>
+
+<body>
+    <main>
+        <!-- Container Geral -->
+        <div class="container">
+
+            <!-- Container Imagem -->
+            <div class="container-img">
+                <img src="img/img.svg" alt="">
+            </div>
+
+            <!-- Container com Escolhas -->
+            <div class="container-anuncio">
+
+                <!-- texto abertura -->
+                <div class="texto-abertura">
+                    <h1>Qual tipo de acomodação é disponibilizado aos hóspedes?</h1>
+                </div>
+
+                <!-- Cards para Escolher -->
+                <div class="cards-container">
+                    <div class="cards-explicativo">
+                        <div class="item">
+                            <label for="hospedes">Hóspedes</label>
+                            <div class="controls">
+                                <button type="button" class="decrease" data-target="hospedes">-</button>
+                                <div class="count" id="hospedes">0</div>
+                                <button type="button" class="increase" data-target="hospedes">+</button>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <label for="quartos">Quartos</label>
+                            <div class="controls">
+                                <button type="button" class="decrease" data-target="quartos">-</button>
+                                <div class="count" id="quartos">0</div>
+                                <button type="button" class="increase" data-target="quartos">+</button>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <label for="banheiros">Banheiros</label>
+                            <div class="controls">
+                                <button type="button" class="decrease" data-target="banheiros">-</button>
+                                <div class="count" id="banheiros">0</div>
+                                <button type="button" class="increase" data-target="banheiros">+</button>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <label for="banheiros">Cozinhas</label>
+                            <div class="controls">
+                                <button type="button" class="decrease" data-target="cozinhas">-</button>
+                                <div class="count" id="cozinhas">0</div>
+                                <button type="button" class="increase" data-target="cozinhas">+</button>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <label for="banheiros">Salas</label>
+                            <div class="controls">
+                                <button type="button" class="decrease" data-target="salas">-</button>
+                                <div class="count" id="salas">0</div>
+                                <button type="button" class="increase" data-target="salas">+</button>
+                            </div>
+                        </div>
+
+                        <button class="confirm-btn" id="confirm">Confirmar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -6,7 +6,7 @@
 }
 
 body {
-    background: #1e3a8a;
+    background: #ff7c30;
     overflow: hidden;
 }
 
@@ -34,7 +34,7 @@ body {
 
 .container-anuncio {
     flex: 1;
-    background: linear-gradient(135deg, #bfdbfe, #93c5fd);
+    background: linear-gradient(135deg, #fcc284);
     border-top-left-radius: 100px;
     border-bottom-left-radius: 100px;
     padding: 70px 20px;
@@ -47,7 +47,7 @@ body {
 .texto-abertura h1 {
     font-size: 2.2rem;
     font-weight: 700;
-    color: #2563eb;
+    color: #ff7300;
     text-align: center;
     margin-bottom: 30px;
 }

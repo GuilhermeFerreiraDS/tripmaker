@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <title></title>
+</head>
+
+<body>
+    <main>
+        <!-- Container Geral -->
+        <div class="container">
+
+            <!-- Container Imagem -->
+            <div class="container-img">
+                <img src="img/img.svg" alt="">
+            </div>
+
+            <!-- Container com Escolhas -->
+            <div class="container-anuncio">
+
+                <!-- texto abertura -->
+                <div class="texto-abertura">
+                    <h1>Confirme o endereço do seu imovel e clique em <span class="highlight">Enviar !!!</span></h1>
+                </div>
+
+                <div class="cards-container">
+                    <form class="form-container">
+                        <h2 class="form-title">Endereço de Imovel</h2>
+
+                        <div class="form-group">
+                            <input type="text" name="rua" placeholder="Rua" required>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" name="bairro" placeholder="Bairro" required>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" name="cidade" placeholder="Cidade" required>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group half">
+                                <input type="text" name="estado" placeholder="Estado" required>
+                            </div>
+                            <div class="form-group half">
+                                <input type="text" name="codigo postal" placeholder="Codigo Postal" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" name="Cep" placeholder="CEP" required>
+                        </div>
+
+                        <button type="submit" class="form-button">Enviar</button>
+                    </form>
+                </div>
+                <!-- Cards para Escolher -->
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
