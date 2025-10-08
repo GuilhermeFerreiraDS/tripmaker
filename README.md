@@ -10,4 +10,4 @@ Criação de paginas: FRONT-END
 
 * Anuncie seu Espaço - Braghe
 * Interação com a IA - Braghe 
-* Minhas Viagens - Braghe
+

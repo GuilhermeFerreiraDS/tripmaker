@@ -1,81 +1,63 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!doctype html>
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="style.css">
-  <title>Minhas Viagens</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Minhas Viagens — Modernizado</title>
+  <link rel="stylesheet" href="style.moderno.css">
 </head>
 <body>
-
-  <header>
-    <div class="wrap">
-
-      <div class="titlebar">
-
-        <div class="logo" aria-hidden="true">
-          <!-- Simple compass icon -->
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="12" cy="12" r="9" stroke="white" opacity=".9"/>
-            <path d="M8 16l2.2-6.2L16 8l-2.2 6.2L8 16z" fill="white"/>
-          </svg>
-        </div>
+  <header class="hero">
+    <div class="hero-inner wrap">
+      <div class="brand">
+        <div class="logo">✈️</div>
         <div>
           <h1>Minhas Viagens</h1>
-          <p>Explore suas viagens em um grid de cards, com busca e filtros.</p>
+          <p class="subtitle">Explore seus destinos com filtros, tags e visual atrativo.</p>
         </div>
-        
       </div>
 
       <div class="controls">
-        <label class="search" aria-label="Buscar viagens">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="#93a6b8" stroke-width="2"/><path d="M20 20l-3.5-3.5" stroke="#93a6b8" stroke-width="2" stroke-linecap="round"/></svg>
-          <input id="q" type="search" placeholder="Buscar por destino, país ou tag..." />
-        </label>
-
-        <div class="select">
-          <select id="continent">
-            <option value="">Todos as cidades</option>
-            <option>América do Sul</option>
-            <option>América do Norte</option>
-            <option>Europa</option>
-            <option>África</option>
-            <option>Ásia</option>
-            <option>Oceania</option>
-          </select>
-          <div class="chev" aria-hidden="true">▾</div>
+        <div class="search">
+          <input id="searchInput" placeholder="🔎 Buscar por destino, país, tag..." />
         </div>
-
-        <div class="select">
-          <select id="year">
-            <option value="">Todos os anos</option>
-          </select>
-          <div class="chev" aria-hidden="true">▾</div>
-        </div>
-
-        <div class="select">
-          <select id="sort">
+        <div class="filters">
+          <select id="cityFilter"><option value="">Todas as cidades</option></select>
+          <select id="yearFilter"><option value="">Todos os anos</option></select>
+          <select id="sortFilter">
             <option value="recent">Mais recentes</option>
-            <option value="oldest">Mais antigas</option>
-            <option value="az">A–Z</option>
+            <option value="oldest">Mais antigos</option>
+            <option value="az">A → Z</option>
           </select>
-          <div class="chev" aria-hidden="true">▾</div>
+        </div>
+        <div class="actions">
+          <button id="addBtn" class="btn-primary">+ Novo Destino</button>
+          <button id="themeToggle" class="btn-ghost" aria-pressed="false">🌙</button>
         </div>
       </div>
-      <div class="ButtonND">
-        <button class="buttonND"> + Novo Destino</button>
-      </div>
-
     </div>
   </header>
 
-
-
-  <main class="wrap">
-    <div id="grid" class="grid" role="list"></div>
-    <div id="empty" class="empty" hidden>Nenhuma viagem encontrada com os filtros atuais.</div>
+  <main class="wrap main-area">
+    <section id="grid" class="grid" role="list" aria-live="polite"></section>
+    <div id="empty" class="empty" hidden>Nenhuma viagem encontrada.</div>
   </main>
 
-  <script src="script.js"></script>
+  <template id="cardTpl">
+    <article class="card" role="listitem">
+      <div class="cover"><img alt="Capa"/><span class="badge"></span></div>
+      <div class="card-body">
+        <h3 class="card-title"></h3>
+        <p class="card-meta"></p>
+        <div class="tags"></div>
+        <div class="card-actions">
+          <button class="btn detail">Ver detalhes</button>
+          <button class="btn copy">Copiar link</button>
+        </div>
+      </div>
+    </article>
+  </template>
+
+  <script src="script.moderno.js"></script>
 </body>
 </html>
