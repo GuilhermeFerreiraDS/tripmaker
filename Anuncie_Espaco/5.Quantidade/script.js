@@ -1,15 +1,17 @@
+// AUMENTAR
 document.querySelectorAll('.increase').forEach(button => {
   button.addEventListener('click', () => {
     const targetId = button.getAttribute('data-target');
     const countEl = document.getElementById(targetId);
 
     let currentValue = parseInt(countEl.textContent);
-    if (isNaN(currentValue)) currentValue = 0; // Garante que comece em 0 se não for número
+    if (isNaN(currentValue)) currentValue = 0;
 
     countEl.textContent = currentValue + 1;
   });
 });
 
+// DIMINUIR
 document.querySelectorAll('.decrease').forEach(button => {
   button.addEventListener('click', () => {
     const targetId = button.getAttribute('data-target');
@@ -17,7 +19,7 @@ document.querySelectorAll('.decrease').forEach(button => {
 
     let currentValue = parseInt(countEl.textContent);
     if (isNaN(currentValue) || currentValue <= 0) {
-      currentValue = 0; // Não permite números negativos
+      currentValue = 0;
     } else {
       currentValue--;
     }
@@ -26,10 +28,10 @@ document.querySelectorAll('.decrease').forEach(button => {
   });
 });
 
+// PEGAR OS DADOS DA URL AO CARREGAR
 document.addEventListener("DOMContentLoaded", () => {
   const params = new URLSearchParams(window.location.search);
 
-  // Pegando todos os dados da URL
   const idAmbiente = params.get('idAmbiente');
   const idEspaco = params.get('idEspaco');
   const rua = params.get('rua');
@@ -54,14 +56,51 @@ document.addEventListener("DOMContentLoaded", () => {
     lng
   });
 
-  // Exemplo: colocar os valores nos inputs se houver
   const campos = { rua, numero, bairro, cidade, estado, cep, lat, lng };
-
   for (const [campo, valor] of Object.entries(campos)) {
     const input = document.getElementById(`input-${campo}`);
     if (input) input.value = valor || "";
   }
 
-  // Se você quiser usar os IDs em variáveis
-  // idAmbiente e idEspaco já estão disponíveis para usar no script
+  // ✅ FUNÇÃO DO BOTÃO CONFIRMAR
+  const confirmBtn = document.getElementById('confirm');
+  confirmBtn.addEventListener('click', () => {
+
+    // Pegar todos os IDs das divs com contadores
+    const contadores = ['hospedes', 'quartos', 'banheiros', 'cozinhas', 'salas'];
+    const dadosContadores = {};
+
+    contadores.forEach(id => {
+      const el = document.getElementById(id);
+      dadosContadores[id] = el ? parseInt(el.textContent) : 0;
+    });
+
+    console.log("📊 Quantidades selecionadas:", dadosContadores);
+
+    // Montar nova URL com os dados antigos + novos
+    const novaURL = new URL('../6.Informacao/index.html', window.location.href);
+
+    // Adicionar os dados antigos
+    novaURL.searchParams.set('idAmbiente', idAmbiente);
+    novaURL.searchParams.set('idEspaco', idEspaco);
+    novaURL.searchParams.set('rua', rua);
+    novaURL.searchParams.set('numero', numero);
+    novaURL.searchParams.set('bairro', bairro);
+    novaURL.searchParams.set('cidade', cidade);
+    novaURL.searchParams.set('estado', estado);
+    novaURL.searchParams.set('cep', cep);
+    novaURL.searchParams.set('lat', lat);
+    novaURL.searchParams.set('lng', lng);
+
+    // Adicionar os novos dados (contadores)
+    for (const [chave, valor] of Object.entries(dadosContadores)) {
+      novaURL.searchParams.set(chave, valor);
+    }
+
+    // Verificar a URL final no console
+    console.log("🌐 Redirecionando para:", novaURL.toString());
+
+    // Redirecionar
+    window.location.href = novaURL.toString();
+  });
 });
