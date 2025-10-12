@@ -7,11 +7,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // Se for Casa ou Apartamento, vai para "Espaco"
             if (idAmbiente === 'card-casa' || idAmbiente === 'card-apartamento') {
-                window.location.href = `../Espaco/index.html?idAmbiente=${idAmbiente}`;
+                window.location.href = `../2.Espaco/index.html?idAmbiente=${idAmbiente}`;
             } 
             // Senão, vai direto para "Local" só com idAmbiente
             else {
-                window.location.href = `../Local/public/index.php?idAmbiente=${idAmbiente}`;
+                window.location.href = `../3.Local/public/index.php?idAmbiente=${idAmbiente}`;
             }
         });
     });

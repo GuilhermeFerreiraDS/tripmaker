@@ -1,0 +1,233 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: #a8e6a3;
+    /* Verde mais forte (quase claro) */
+    overflow: hidden;
+}
+
+/* Container geral */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 100%;
+    height: 100vh;
+}
+
+/* Container da imagem */
+.container-img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.container-img img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* Segunda coluna com verde claro */
+.container-anuncio {
+    flex: 1;
+    background: linear-gradient(135deg, #c7ffc7);
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+/* Título */
+.texto-abertura h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #2e7d32;
+    /* Verde médio para contraste */
+}
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+}
+
+.cards-explicativo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.valor-card {
+    background: #fff;
+    padding: 30px 25px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    width: 70%;
+    height: 70%;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.valor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.2);
+}
+
+.valor-card h2 {
+    font-size: 1.8rem;
+    color: #2e7d32;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.valor-controls {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.valor-step {
+    width: 45px;
+    height: 45px;
+    font-size: 22px;
+    border: none;
+    background: #d1f0d1;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.valor-step:hover {
+    background: #a8e6a3;
+    color: #fff;
+}
+
+.valor-input-wrap {
+    display: flex;
+    align-items: center;
+    margin: 0 12px;
+    background: #f7f7f7;
+    padding: 5px 10px;
+    border-radius: 10px;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
+}
+
+#input-valor {
+    width: 130%;
+    padding: 5px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+#slider-valor {
+    width: 100%;
+    margin: 15px 0;
+    accent-color: #2e7d32;
+    cursor: pointer;
+}
+
+.quick-values button {
+    margin: 5px 5px 0 0;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 12px;
+    background: #d1f0d1;
+    color: #2e7d32;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.quick-values button:hover {
+    background: #2e7d32;
+    color: #fff;
+}
+
+.valor-help {
+    font-size: 12px;
+    color: #555;
+    text-align: center;
+    margin-bottom: 5px;
+    margin-top: 50px;
+}
+
+.valor-feedback {
+    color: #e53935;
+    font-weight: bold;
+    margin: 5px 0;
+    text-align: center;
+}
+
+.valor-formatado {
+    font-size: 20px;
+    font-weight: 700;
+    color: #2e7d32;
+    margin: 10px 0;
+}
+
+.valor-resumo {
+    margin-top: 20px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.valor-resumo p {
+    margin: 4px 0;
+    font-size: 14px;
+    color: #555;
+}
+
+.descricao-btn {
+    margin-top: 20px;
+    padding: 12px;
+    width: 100%;
+    background: #2e7d32;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background 0.2s ease;
+}
+
+.descricao-btn:hover {
+    background: #1b5e20;
+}
+
+/* Garantindo que todos ocupem 100% do container */
+.cards-container, .cards-explicativo, .valor-card {
+    flex: 1;
+}
+
+/* Importa o Font Awesome */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');

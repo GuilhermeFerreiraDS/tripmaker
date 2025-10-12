@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="style.css">
-
     <title></title>
 </head>
 
@@ -26,41 +25,33 @@
 
                 <!-- texto abertura -->
                 <div class="texto-abertura">
-                    <h1>Qual tipo de acomodação é disponibilizado aos hóspedes?</h1>
+                    <h1>Faça uma breve descrição do seu espaço, contendo as principais informações e diferenciais.</h1>
                 </div>
 
                 <!-- Cards para Escolher -->
                 <div class="cards-container">
                     <div class="cards-explicativo">
-                        <div class="card" id="card-espaço-inteiro">
-                            <i class="fa fa-home"></i>
-                            <div class="text">
-                                <h2>Um Espaço Inteiro</h2>
-                                <p>Os hóspedes têm o lugar todo para eles</p>
+                        <div class="card descricao-card" id="descricao">
+                            <div class="descricao-header">
+                                <i class="fas fa-home"></i>
+                                <h3>Descrição do Imóvel</h3>
                             </div>
-                        </div>
+                            <div class="container-text-button">
+                                <textarea id="descricao-imovel" name="descricao-imovel" class="descricao-textarea"
+                                    placeholder="Fale sobre o imóvel... Ex: tamanho, área externa, diferenciais, etc."
+                                    required></textarea>
 
-                        <div class="card" id="card-quarto">
-                            <i class="fa fa-bed"></i>
-                            <div class="text">
-                                <h2>Um Quarto</h2>
-                                <p>Os hóspedes têm um quarto só para eles</p>
-                            </div>
-                        </div>
-
-                        <div class="card" id="card-compartilhado">
-                            <i class="fa fa-users"></i>
-                            <div class="text">
-                                <h2>Quarto Compartilhado</h2>
-                                <p>Os hóspedes dormem em um quarto compartilhado em um albergue</p>
+                                <button type="button" id="btn-descricao" class="descricao-button">
+                                    Salvar Descrição
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </main>
-    </div>
     <script src="script.js"></script>
 </body>
 
