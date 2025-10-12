@@ -10,4 +10,3 @@ document.addEventListener("DOMContentLoaded", () => {
     if (idAmbiente) localStorage.setItem('idAmbiente', idAmbiente);
     if (idEspaco) localStorage.setItem('idEspaco', idEspaco);
 });
-
