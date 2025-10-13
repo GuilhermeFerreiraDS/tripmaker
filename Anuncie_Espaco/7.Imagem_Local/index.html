@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="style.css">
-    <title></title>
+    <title>Meu Espaço</title>
 </head>
 
 <body>
@@ -33,13 +33,55 @@
                     <div class="cards-explicativo">
                         <div class="card" id="img-imovel">
                             <img src="img/img1.svg" alt="">
-                            <button class="btn">Adicione Fotos</button>
+                            <button class="btn" id="btn-adicionar-fotos">
+                                <i class="fas fa-camera"></i> Adicione Fotos
+                            </button>
+                            
+                            <!-- Galeria de Imagens - NOVO -->
+                            <div class="galeria-fotos" id="galeria-fotos">
+                                <div class="mensagem-vazia">
+                                    <i class="fas fa-images"></i>
+                                    <p>Nenhuma foto adicionada ainda</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </main>
+
+    <!-- Modal de Upload - NOVO -->
+    <div class="modal-upload" id="modal-upload">
+        <div class="modal-conteudo">
+            <div class="modal-cabecalho">
+                <h2>Adicionar Fotos do Seu Espaço</h2>
+                <button class="fechar-modal" id="fechar-modal">&times;</button>
+            </div>
+            <div class="opcoes-upload">
+                <label class="opcao-upload" for="input-arquivo">
+                    <i class="fas fa-folder-open"></i>
+                    <div class="texto-opcao">
+                        <h3>Escolher arquivos</h3>
+                        <p>Selecione fotos do seu computador</p>
+                    </div>
+                </label>
+                <input type="file" id="input-arquivo" class="input-arquivo" accept="image/*" multiple>
+                
+                <div class="opcao-upload" id="opcao-camera">
+                    <i class="fas fa-camera"></i>
+                    <div class="texto-opcao">
+                        <h3>Tirar foto</h3>
+                        <p>Use sua câmera para tirar uma foto</p>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-cancelar" id="btn-cancelar">
+                <i class="fas fa-times"></i> Cancelar
+            </button>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 
