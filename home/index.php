@@ -26,7 +26,7 @@
 <div class="list">
 
     <div class="item">
-        <img src="../image/Sorocaba.webp" alt="">
+        <img src="./img/Sorocaba.webp" alt="">
 
         <div class="content">
             <div class="title">SOROCABA</div>
@@ -41,7 +41,7 @@
     </div>
 
     <div class="item">
-        <img src="../image/itu.jpg" alt="">
+        <img src="./img/itu.jpg" alt="">
 
         <div class="content">
             <div class="title">ITU</div>
@@ -56,7 +56,7 @@
     </div>
 
     <div class="item">
-        <img src="../image/tatui.jpg" alt="">
+        <img src="./img/tatui.jpg" alt="">
 
         <div class="content">
             <div class="title">TATUÍ</div>
@@ -71,7 +71,7 @@
     </div>
 
     <div class="item">
-        <img src="../image/boituva.jpg" alt="">
+        <img src="./img/boituva.jpg" alt="">
 
         <div class="content">
             <div class="title">BOITUVA</div>
@@ -90,16 +90,16 @@
 <div class="thumbnail">
 
     <div class="item">
-        <img src="../image/sorocaba.webp" alt="">
+        <img src="./img/sorocaba.webp" alt="">
     </div>
     <div class="item">
-        <img src="../image/itu.jpg" alt="">
+        <img src="./img/itu.jpg" alt="">
     </div>
     <div class="item">
-        <img src="../image/tatui.jpg" alt="">
+        <img src="./img/tatui.jpg" alt="">
     </div>
     <div class="item">
-        <img src="../image/boituva.jpg" alt="">
+        <img src="./img/boituva.jpg" alt="">
     </div>
 
 </div>

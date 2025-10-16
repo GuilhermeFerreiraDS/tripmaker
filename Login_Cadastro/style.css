@@ -6,7 +6,8 @@
   box-sizing: border-box;
 }
 
-body,input {
+body,
+input {
   font-family: "Poppins", sans-serif;
 }
 
@@ -16,6 +17,20 @@ body,input {
   background-color: #fff;
   min-height: 100vh;
   overflow: hidden;
+}
+
+svg {
+  width: 32px;
+  height: 32px;
+  position: fixed;    
+  top: 15px;           
+  left: 20px;          
+  z-index: 9999;       
+  cursor: pointer;     
+}
+
+.button-voltar{
+  color: #444;
 }
 
 .forms-container {
@@ -149,6 +164,7 @@ form.sign-in-form {
 .btn:hover {
   background-color: #4d84e2;
 }
+
 .panels-container {
   position: absolute;
   height: 100%;
@@ -276,6 +292,7 @@ form.sign-in-form {
     min-height: 800px;
     height: 100vh;
   }
+
   .signin-signup {
     width: 100%;
     top: 95%;
@@ -382,9 +399,11 @@ form.sign-in-form {
   .image {
     display: none;
   }
+
   .panel .content {
     padding: 0.5rem 1rem;
   }
+
   .container {
     padding: 1.5rem;
   }
