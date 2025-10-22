@@ -36,12 +36,21 @@
                             <button class="btn" id="btn-adicionar-fotos">
                                 <i class="fas fa-camera"></i> Adicione Fotos
                             </button>
-                            
+
                             <!-- Galeria de Imagens - NOVO -->
                             <div class="galeria-fotos" id="galeria-fotos">
                                 <div class="mensagem-vazia">
                                     <i class="fas fa-images"></i>
                                     <p>Nenhuma foto adicionada ainda</p>
+                                </div>
+                            </div>
+
+                            <!-- Modal -->
+                            <div class="modal" id="modal">
+                                <div class="modal-content">
+                                    <button class="close-modal" id="close-modal">Fechar</button>
+                                    <h3>Todas as Imagens</h3>
+                                    <div class="modal-imagens" id="modal-imagens"></div>
                                 </div>
                             </div>
                         </div>
@@ -67,7 +76,7 @@
                     </div>
                 </label>
                 <input type="file" id="input-arquivo" class="input-arquivo" accept="image/*" multiple>
-                
+
                 <div class="opcao-upload" id="opcao-camera">
                     <i class="fas fa-camera"></i>
                     <div class="texto-opcao">
@@ -82,6 +91,7 @@
         </div>
     </div>
 
+    <script src="contador-galeria.js"></script>
     <script src="script.js"></script>
 </body>
 
