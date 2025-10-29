@@ -42,3 +42,46 @@ btnDown.addEventListener('click', () => atualizarTudo(Number(inputValor.value) -
 
 // Inicializa
 atualizarTudo(Number(inputValor.value));
+
+document.addEventListener("DOMContentLoaded", () => {
+    const dados = JSON.parse(sessionStorage.getItem("dadosGaleria") || "{}");
+
+    // Parâmetros
+    if (dados.parametros) {
+        console.log("📦 Parâmetros da URL:", dados.parametros);
+    }
+
+    // Imagens
+    if (dados.imagens && dados.imagens.length > 0) {
+        console.log("🖼️ Imagens da galeria:", dados.imagens);
+
+        const container = document.createElement("div");
+        container.id = "galeria-recebida";
+        container.style.marginTop = "20px";
+
+        dados.imagens.forEach(src => {
+            const img = document.createElement("img");
+            img.src = src; // Aqui pode ser URL ou Base64
+            img.style.width = "100px";
+            img.style.margin = "5px";
+            container.appendChild(img);
+        });
+
+        document.body.appendChild(container);
+    } else {
+        console.log("🖼️ Nenhuma imagem recebida.");
+    }
+
+    // Descrição
+    if (dados.descricao) {
+        console.log("📝 Descrição do imóvel:", dados.descricao);
+
+        const p = document.createElement("p");
+        p.textContent = dados.descricao;
+        p.style.marginTop = "10px";
+        p.style.fontWeight = "bold";
+        document.body.appendChild(p);
+    } else {
+        console.log("📝 Nenhuma descrição recebida.");
+    }
+});

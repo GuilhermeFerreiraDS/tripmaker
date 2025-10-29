@@ -13,9 +13,10 @@ $googleMapsKey = $_ENV['GOOGLE_MAPS_KEY'];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Local do Imóvel</title>
+    <!-- <script src="../Script_Global.js"></script> -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <title>Local do Imóvel</title>
 </head>
 
 <body>
