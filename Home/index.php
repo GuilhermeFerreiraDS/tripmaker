@@ -26,7 +26,7 @@
 <div class="list">
 
     <div class="item">
-        <img src="./img/Sorocaba.webp" alt="">
+        <img src="./img/sorocaba.jpeg" alt="">
 
         <div class="content">
             <div class="title">SOROCABA</div>
@@ -41,7 +41,7 @@
     </div>
 
     <div class="item">
-        <img src="./img/itu.jpg" alt="">
+        <img src="./img/itu.webp" alt="">
 
         <div class="content">
             <div class="title">ITU</div>
@@ -90,10 +90,10 @@
 <div class="thumbnail">
 
     <div class="item">
-        <img src="./img/sorocaba.webp" alt="">
+        <img src="./img/sorocaba.jpeg" alt="">
     </div>
     <div class="item">
-        <img src="./img/itu.jpg" alt="">
+        <img src="./img/itu.webp" alt="">
     </div>
     <div class="item">
         <img src="./img/tatui.jpg" alt="">
