@@ -29,37 +29,44 @@ USE `turismo`;
 -- Estrutura da tabela `pontos_turisticos`
 --
 
-CREATE TABLE pontos_turisticos (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    bairro VARCHAR(255),
-    banheiros INT,
-    cardsSelecionados VARCHAR(255),
-    cep VARCHAR(20),
-    cidade VARCHAR(255),
-    cozinhas INT,
-    estado VARCHAR(100),
-    hospedes INT,
-    idAmbiente VARCHAR(255),
-    idEspaco VARCHAR(255),
-    lat DECIMAL(10, 8),
-    lng DECIMAL(11, 8),
-    numero VARCHAR(20),
-    quartos INT,
-    rua VARCHAR(255),
-    salas INT,
-    descricao TEXT,
-    imagens JSON,
-    valorImovel DECIMAL(12, 2),
-    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
+CREATE TABLE `pontos_turisticos` (
+  `id` int(11) NOT NULL,
+  `bairro` varchar(255) DEFAULT NULL,
+  `banheiros` int(11) DEFAULT NULL,
+  `cardsSelecionados` varchar(255) DEFAULT NULL,
+  `cep` varchar(20) DEFAULT NULL,
+  `cidade` varchar(255) NOT NULL,
+  `cozinhas` int(11) DEFAULT NULL,
+  `estado` varchar(100) DEFAULT NULL,
+  `hospedes` int(11) DEFAULT NULL,
+  `idAmbiente` varchar(255) DEFAULT NULL,
+  `idEspaco` varchar(255) DEFAULT NULL,
+  `lat` decimal(10,8) DEFAULT NULL,
+  `lng` decimal(11,8) DEFAULT NULL,
+  `numero` varchar(20) DEFAULT NULL,
+  `quartos` int(11) DEFAULT NULL,
+  `rua` varchar(255) DEFAULT NULL,
+  `salas` int(11) DEFAULT NULL,
+  `descricao` text DEFAULT NULL,
+  `imagens` json DEFAULT NULL,
+  `valorImovel` decimal(12,2) DEFAULT NULL,
+  `criado_em` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
 --
--- Extraindo dados da tabela `pontos_turisticos`
+-- Estrutura da tabela `usuarios`
 --
 
-INSERT INTO `pontos_turisticos` (`id`, `nome`, `cidade`, `descricao`, `categoria`, `preco_estimado`, `duracao_media`, `horario_funcionamento`) VALUES
-(1, 'Elevador Lacerda', 'Salvador', 'Cartão postal que liga a cidade baixa à cidade alta.', 'cultural', 100.00, 30, '08:00-20:00'),
-(2, 'Pelourinho', 'Salvador', 'Centro histórico com casarões coloridos e igrejas.', 'histórico', 0.00, 120, 'Livre'),
-(3, 'Praia do Farol da Barra', 'Salvador', 'Praia famosa com vista para o farol.', 'praia', 0.00, 180, 'Livre');
+CREATE TABLE `usuarios` (
+  `id` int(11) NOT NULL,
+  `username` varchar(100) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `tipo` enum('user','adm','adm-prefeitura') DEFAULT 'user',
+  `data_criacao` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Índices para tabelas despejadas
@@ -72,6 +79,13 @@ ALTER TABLE `pontos_turisticos`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Índices para tabela `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`);
+
+--
 -- AUTO_INCREMENT de tabelas despejadas
 --
 
@@ -79,20 +93,15 @@ ALTER TABLE `pontos_turisticos`
 -- AUTO_INCREMENT de tabela `pontos_turisticos`
 --
 ALTER TABLE `pontos_turisticos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de tabela `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
-
--- Adicione esta tabela ao seu banco de dados turismo
-CREATE TABLE usuarios (
-    id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(100) NOT NULL,
-    email VARCHAR(255) NOT NULL UNIQUE,
-    password VARCHAR(255) NOT NULL,
-    tipo ENUM('user', 'adm', 'adm-prefeitura') DEFAULT 'user',
-    data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
