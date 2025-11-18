@@ -8,6 +8,7 @@ Criação de paginas: FRONT-END
 * Roteiro - Guilherme
 * Modal - Guilherme
 
-* Anuncie seu Espaço - Braghe
+
+
 * Interação com a IA - Braghe 
 
