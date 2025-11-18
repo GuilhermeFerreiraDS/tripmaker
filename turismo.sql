@@ -29,34 +29,29 @@ USE `turismo`;
 -- Estrutura da tabela `pontos_turisticos`
 --
 
-CREATE TABLE `pontos_turisticos` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nome` varchar(255) NOT NULL,
-  `bairro` varchar(255) DEFAULT NULL,
-  `rua` varchar(255) DEFAULT NULL,
-  `numero` varchar(20) DEFAULT NULL,
-  `cidade` varchar(255) NOT NULL,
-  `estado` varchar(2) DEFAULT NULL,
-  `cep` varchar(20) DEFAULT NULL,
-  `lat` varchar(50) DEFAULT NULL,
-  `lng` varchar(50) DEFAULT NULL,
-  `descricao` text DEFAULT NULL,
-  `imagens` longtext DEFAULT NULL,
-  `categoria` varchar(100) DEFAULT NULL,
-  `preco_estimado` decimal(10,2) DEFAULT NULL,
-  `duracao_media` int(11) DEFAULT NULL,
-  `horario_funcionamento` varchar(100) DEFAULT NULL,
-  `banheiros` varchar(10) DEFAULT NULL,
-  `quartos` varchar(10) DEFAULT NULL,
-  `salas` varchar(10) DEFAULT NULL,
-  `cozinhas` varchar(10) DEFAULT NULL,
-  `hospedes` varchar(10) DEFAULT NULL,
-  `id_ambiente` varchar(50) DEFAULT NULL,
-  `id_espaco` varchar(50) DEFAULT NULL,
-  `cards_selecionados` text DEFAULT NULL,
-  `data_criacao` datetime DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE pontos_turisticos (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    bairro VARCHAR(255),
+    banheiros INT,
+    cardsSelecionados VARCHAR(255),
+    cep VARCHAR(20),
+    cidade VARCHAR(255),
+    cozinhas INT,
+    estado VARCHAR(100),
+    hospedes INT,
+    idAmbiente VARCHAR(255),
+    idEspaco VARCHAR(255),
+    lat DECIMAL(10, 8),
+    lng DECIMAL(11, 8),
+    numero VARCHAR(20),
+    quartos INT,
+    rua VARCHAR(255),
+    salas INT,
+    descricao TEXT,
+    imagens JSON,
+    valorImovel DECIMAL(12, 2),
+    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
 --
 -- Extraindo dados da tabela `pontos_turisticos`
 --
