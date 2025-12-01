@@ -10,7 +10,6 @@
 
 /* Fundo */
 body {
-    background: #f8f9fb;
     color: #333;
     overflow-x: hidden; /* Evita rolagem horizontal indesejada */
 }
@@ -22,18 +21,38 @@ body {
     align-items: center;
     gap: 10px;
     padding: 15px;
-    border-bottom: 1px solid #ddd;
-    background: white;
     position: relative;
     z-index: 10;
 }
 
 .logo-icons {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     width: 100%;
-    max-width: 1200px;
+    max-width: 100%;
+}
+
+.paginas{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 50px;
+    width: 100%;
+    margin-right: 15%;
+}
+
+.login_icone{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin-right: 5%;
+}
+
+.icone{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin-left: 2%;
 }
 
 .logo {
@@ -89,7 +108,6 @@ body {
 
 .slider{
     height: 100vh;
-    margin-top: -50px;
     width: 100vw;
     overflow: hidden;
     position: relative;
