@@ -391,3 +391,122 @@ body {
 .arrow-strong i {
   color: #ffffff;
 }
+
+.save-btn {
+    background: linear-gradient(135deg, #3B82F6, #1D4ED8);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.save-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+.save-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Loading animation */
+.save-btn.loading {
+    background: linear-gradient(135deg, #6B7280, #4B5563);
+}
+
+.controls-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px auto;
+    max-width: 1200px;
+    padding: 15px;
+    background: rgba(10, 20, 40, 0.8);
+    border-radius: 12px;
+    border: 1px solid rgba(0, 209, 255, 0.6);
+    gap: 15px;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quantity-control label {
+    color: white;
+    font-weight: bold;
+}
+
+.quantity-control input {
+    width: 60px;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #3B82F6;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.quantity-control button, .save-btn {
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #10B981, #059669);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.quantity-control button:hover, .save-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+}
+
+/* Botão de excluir card */
+.delete-card-btn {
+    background: rgba(239, 68, 68, 0.8);
+    border: none;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-left: auto;
+    font-size: 12px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.delete-card-btn:hover {
+    background: rgba(220, 38, 38, 1);
+    transform: scale(1.05);
+    box-shadow: 0 2px 8px rgba(239, 68, 68, 0.4);
+}
+
+.bot-msg-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+/* Estados de loading e erro */
+.loading, .no-results, .error {
+    text-align: center;
+    padding: 20px;
+    font-weight: bold;
+}
+
+.loading { color: #3B82F6; }
+.no-results { color: #F59E0B; }
+.error { color: #EF4444; }
