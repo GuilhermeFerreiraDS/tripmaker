@@ -27,15 +27,23 @@
                     </div>
 
                     <div class="login_icone">
-                        <i class="fa-regular fa-circle-user user"></i>
+                        <a href="../Login_Cadastro/index.php">
+                            <i class="fa-regular fa-circle-user user"></i>
+                        </a>
                     </div>
-                    
+
                 </div>
-                <!-- <div class="search-box">
-                    <input type="text" placeholder="Digite seu destino...">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </div> -->
             </header>
+
+
+            <!-- Carrosel Bolinhas -->
+            <div class="vertical-indicators">
+                <div class="indicator-line"></div>
+                <div class="indicator-dot active" data-index="0"></div>
+                <div class="indicator-dot" data-index="1"></div>
+                <div class="indicator-dot" data-index="2"></div>
+                <div class="indicator-dot" data-index="3"></div>
+            </div>
 
             <!-- Carrosel Img Grande  -->
             <div class="item">
@@ -102,18 +110,18 @@
         <!-- Carrossel de Cards -->
         <div class="thumbnail">
             <div class="item">
-                <img src="./img/boituva.jpg" alt="">
-            </div>
-
-            <div class="item">
                 <img src="./img/tatui.jpg" alt="">
             </div>
+
             <div class="item">
-                <img src="./img/itu.webp" alt="">
+                <img src="./img/boituva.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="./img/sorocaba.jpeg" alt="">
             </div>
 
             <div class="item">
-                <img src="./img/sorocaba.jpeg" alt="">
+                <img src="./img/itu.webp" alt="">
             </div>
         </div>
 
@@ -124,45 +132,157 @@
         </div>
     </div>
 
+
+    <!-- Adicione isso DEPOIS do slider e ANTES do main -->
+    <section class="sobre-nos">
+        <div class="sobre-container">
+            <h2 class="sobre-titulo">🌍 Sobre o TripMaker</h2>
+
+            <div class="sobre-conteudo">
+                <div class="sobre-texto">
+                    <h3>Transformamos sua maneira de viajar</h3>
+                    <p>Somos uma plataforma inovadora que conecta viajantes a experiências únicas. Nosso objetivo é simplificar o planejamento de viagens, oferecendo tudo em um só lugar.</p>
+
+                    <div class="sobre-destaques">
+                        <div class="destaque">
+                            <i class="fas fa-check-circle"></i>
+                            <span>+500 destinos disponíveis</span>
+                        </div>
+                        <div class="destaque">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Roteiros personalizados</span>
+                        </div>
+                        <div class="destaque">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Preços sem intermediários</span>
+                        </div>
+                        <div class="destaque">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Suporte 24/7</span>
+                        </div>
+                    </div>
+
+                    <p class="sobre-missao">Nossa missão é tornar cada viagem uma experiência memorável, com praticidade e segurança.</p>
+
+                    <button class="sobre-btn">Comece Agora</button>
+                </div>
+
+                <div class="sobre-imagem">
+                    <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Viajantes felizes">
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Conteúdo principal -->
     <main class="container">
-        <h1 class="brand">TripMaker</h1>
-
-        <a href="#" class="highlight-card">
-            <p>Confira Pacotes por Acomodação</p>
-            <img src="https://picsum.photos/200/100?random=2" alt="Pacote">
-        </a>
 
         <!-- Hospedagem -->
         <section class="section">
             <h2>🏨 Hospedagem</h2>
-            <div class="grid">
-                <img src="https://picsum.photos/100?random=3" alt="hotel">
-                <img src="https://picsum.photos/100?random=4" alt="hotel">
-                <img src="https://picsum.photos/100?random=5" alt="hotel">
+            <div class="card-grid">
+                <div class="card"><img src="https://picsum.photos/300?random=3"></div>
+                <div class="card"><img src="https://picsum.photos/300?random=4"></div>
+                <div class="card"><img src="https://picsum.photos/300?random=5"></div>
             </div>
         </section>
 
         <!-- Pontos Turísticos -->
         <section class="section">
             <h2>📍 Pontos Turísticos</h2>
-            <div class="grid">
-                <img src="https://picsum.photos/100?random=6" alt="ponto turístico">
-                <img src="https://picsum.photos/100?random=7" alt="ponto turístico">
-                <img src="https://picsum.photos/100?random=8" alt="ponto turístico">
+            <div class="card-grid">
+                <div class="card"><img src="https://picsum.photos/300?random=6"></div>
+                <div class="card"><img src="https://picsum.photos/300?random=7"></div>
+                <div class="card"><img src="https://picsum.photos/300?random=8"></div>
             </div>
         </section>
 
         <!-- Mais Visitados -->
         <section class="section">
             <h2>🔥 Mais Visitados</h2>
-            <div class="grid">
-                <img src="https://picsum.photos/100?random=9" alt="popular">
-                <img src="https://picsum.photos/100?random=10" alt="popular">
-                <img src="https://picsum.photos/100?random=11" alt="popular">
+            <div class="card-grid">
+                <div class="card"><img src="https://picsum.photos/300?random=9"></div>
+                <div class="card"><img src="https://picsum.photos/300?random=10"></div>
+                <div class="card"><img src="https://picsum.photos/300?random=11"></div>
             </div>
         </section>
+
+
+
     </main>
+
+    <section class="hero-color">
+
+        <div class="hero-color-content">
+
+            <span class="color-tag">Viaje com Quem Entende ✈️</span>
+
+            <h1>
+                Encontre Seu Próximo <strong>Destino Perfeito</strong>
+            </h1>
+
+            <p>
+                Pacotes exclusivos, hospedagens incríveis e experiências únicas pelo Brasil e pelo mundo.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#" class="btn primary">Explorar Destinos</a>
+                <a href="#" class="btn secondary">Promoções</a>
+            </div>
+        </div>
+
+        <!-- Mini carrossel de destinos -->
+        <div class="travel-slider">
+            <img src="https://picsum.photos/250?random=21">
+            <img src="https://picsum.photos/250?random=22">
+            <img src="https://picsum.photos/250?random=23">
+            <img src="https://picsum.photos/250?random=24">
+        </div>
+
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+
+            <div class="footer-col">
+                <h3>🌍 Agência TripMaker</h3>
+                <p>Descobrindo destinos, criando memórias. Sua viagem começa aqui.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Links Rápidos</h4>
+                <ul>
+                    <li><a href="#">Hospedagem</a></li>
+                    <li><a href="#">Pontos Turísticos</a></li>
+                    <li><a href="#">Pacotes</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contato</h4>
+                <p>📞 (11) 90000-0000</p>
+                <p>📧 contato@explore.com</p>
+                <p>📍 Brasil</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Redes Sociais</h4>
+                <div class="socials">
+                    <a href="#">📘</a>
+                    <a href="#">📸</a>
+                    <a href="#">🐦</a>
+                    <a href="#">▶️</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            © 2025 Agência TripMaker — João Otávio e Guilherme Cristian.
+        </div>
+    </footer>
+
     <script src="app.js"></script>
 </body>
 
